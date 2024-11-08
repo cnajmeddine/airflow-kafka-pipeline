@@ -6,20 +6,7 @@ This project sets up a data pipeline to ingest real-time weather data from a pub
 
 The weather data pipeline consists of the following components:
 
-+---------------+     +----------+     +--------------+     +--------------+     +-------------+
-| Weather API   |     | Kafka    |     | Spark        |     | PostgreSQL   |     | Airflow     |
-+---------------+     +----------+     +--------------+     +--------------+     +-------------+
-       |                    |                 |                     |                     |
-       |---(Weather Data)-->|                 |                     |                     |
-       |                    |---(Streaming)-->|                     |                     |
-       |                    |                 |---(Process Data)--->|                     |
-       |                    |                 |                     |---(Store Data)----->|
-       |                    |                 |                     |                     |
-       |                    |<----------------+                     |                     |
-       |                    |                 |                     |                     |
-       |<------------------(Monitoring)-------+                     |                     |
-       |                    |                 |                     |                     |
-       +------------------- +                 +--------------------- +                 +-------------+
+<img src="./images/diagram-kafka-airflow-docker.png" alt="architecture">
 
 1. **Data Source**: OpenWeatherMap API (or any other public weather API)
 2. **Event Streaming**: Apache Kafka
